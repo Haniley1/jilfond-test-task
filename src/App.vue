@@ -1,27 +1,50 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+  <div id="page-container">
+    <TopBar />
+    <FormCard />
+  </div>
 </template>
 
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component';
-import HelloWorld from './components/HelloWorld.vue';
+import FormCard from './components/FormCard.vue';
+import TopBar from './components/TopBar.vue';
 
 @Options({
   components: {
-    HelloWorld,
+    FormCard,
+    TopBar
   },
 })
-export default class App extends Vue {}
+export default class App extends Vue { }
 </script>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+@import "./assets/fonts/Montserrat/index.scss";
+
+html,
+body {
+  margin: 0;
 }
+
+#app {
+  font-family: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, "SF UI Text", "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  height: 100vh;
+  max-height: 100vh;
+  
+  background: #FFF;
+  font-size: 16px;
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+#page-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 58px 50px;  
+}
+
 </style>
